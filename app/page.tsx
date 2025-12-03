@@ -361,7 +361,8 @@ export default function Home() {
         {characters.map((char) => (
           <div
             key={char.id}
-            className="absolute transition-transform will-change-transform"
+            // 修正：移除 transition-transform 避免與 JS 動畫迴圈衝突導致殘影
+            className="absolute will-change-transform"
             style={{
               left: 0, 
               bottom: '10%', // 基準線在雪地上
